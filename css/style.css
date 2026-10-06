@@ -7,6 +7,14 @@
 }
 
 @font-face {
+   font-family: 'Montserrat';
+   src: url('../assets/fonts/Montserrat-SemiBold.woff2') format('woff2');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
    font-family: 'Open Sans';
    src: url('../assets/fonts/OpenSans-Regular.ttf') format('truetype');
    font-weight: 400;
@@ -23,4 +31,166 @@
    /* Fonts */
    --font-heading: 'Montserrat', sans-serif;
    --font-body: 'Open Sans', sans-serif;
+
+   /* Layout */
+   --pad-x: 20px;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   font-family: var(--font-body);
+   font-size: 1rem;
+   line-height: 1.7;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+/* Header and Navigation */
+
+header {
+   position: relative;
+   z-index: 100;
+   background: var(--teal);
+}
+
+.header-container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-width: 1200px;
+   height: 72px;
+   margin: 0 auto;
+   padding: 0 var(--pad-x);
+}
+
+.logo {
+   width: 120px;
+}
+
+header nav ul {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+header nav ul a {
+   color: var(--white);
+   font-family: var(--font-heading);
+   font-size: 0.8125rem;
+   font-weight: 600;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+
+header nav ul a:hover {
+   color: var(--sand);
+}
+
+/* Pill buttons */
+
+/* By AI */
+
+.menu-toggle,
+.book-shoot {
+   display: inline-flex;
+   align-items: center;
+   height: 44px;
+   padding: 0 20px;
+   border: none;
+   border-radius: 999px;
+   background: var(--sand);
+   color: var(--teal);
+   font-family: var(--font-heading);
+   font-size: 0.75rem;
+   font-weight: 600;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.book-shoot {
+   height: 40px;
+}
+
+.menu-toggle:hover,
+.book-shoot:hover {
+   filter: brightness(1.06);
+}
+
+header a:focus-visible,
+header button:focus-visible {
+   outline: 3px solid var(--sand);
+   outline-offset: 3px;
+}
+
+/* By AI */
+
+/* Mobile and tablet: links drop down from the Menu button */
+@media (max-width: 1199px) {
+   header nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: 1.5rem var(--pad-x) 2rem;
+      background: var(--teal);
+   }
+
+   header nav.is-open {
+      display: block;
+   }
+
+   .book-shoot {
+      margin-top: 2rem;
+   }
+}
+
+@media (min-width: 768px) {
+   :root {
+      --pad-x: 32px;
+   }
+}
+
+/* Desktop: links sit in a row next to the logo */
+@media (min-width: 1200px) {
+   :root {
+      --pad-x: 40px;
+   }
+
+   .header-container {
+      height: 96px;
+   }
+
+   .logo {
+      width: 150px;
+   }
+
+   .menu-toggle {
+      display: none;
+   }
+
+   header nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+   }
+
+   header nav ul {
+      flex-direction: row;
+      gap: 2rem;
+   }
 }
