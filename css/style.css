@@ -6,8 +6,6 @@
    font-display: swap;
 }
 
-/* By AI */
-
 @font-face {
    font-family: 'Montserrat';
    src: url('../assets/fonts/Montserrat-Light.woff2') format('woff2');
@@ -15,8 +13,6 @@
    font-style: normal;
    font-display: swap;
 }
-
-/* By AI */
 
 @font-face {
    font-family: 'Montserrat';
@@ -55,6 +51,41 @@ body {
    font-family: var(--font-body);
    font-size: 1rem;
    line-height: 1.7;
+}
+
+.label-container {
+   display: flex;
+
+   align-items: center;
+   gap: 10px;
+}
+
+.label {
+   font-family: var(--font-heading);
+   font-size: 16px;
+   letter-spacing: 0.2em;
+   text-transform: uppercase;
+}
+
+.label-dot {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background-color: var(--sand);
+}
+
+h2 {
+   margin: 0 0 16px;
+   font-family: var(--font-heading);
+   font-size: 28px;
+   font-weight: 600;
+   letter-spacing: -0.01em;
+   line-height: 1.2;
+}
+
+h4 {
+   font-family: var(--font-heading);
+   font-weight: 600;
 }
 
 img {
@@ -160,16 +191,6 @@ header nav ul a:hover {
    border-radius: 50%;
 }
 
-.label {
-   margin: 0;
-   color: var(--sand);
-   font-family: var(--font-heading);
-   font-size: 0.75rem;
-   font-weight: 600;
-   letter-spacing: 2px;
-   text-transform: uppercase;
-}
-
 .hero h1 {
    margin: 24px 0;
    font-family: var(--font-heading);
@@ -223,7 +244,6 @@ header nav ul a:hover {
    padding: 64px 20px;
 }
 
-/* Space on the right and bottom so the circle can overlap the corner */
 .story-photos {
    position: relative;
    padding: 0 40px 24px 0;
@@ -298,6 +318,10 @@ header nav ul a:hover {
 
 /* Tablet */
 @media (min-width: 768px) {
+   h2 {
+      font-size: 32px;
+   }
+
    .hero-container {
       flex-direction: row-reverse;
       align-items: center;
@@ -337,6 +361,10 @@ header nav ul a:hover {
 
 /* Desktop */
 @media (min-width: 1200px) {
+   h2 {
+      font-size: 36px;
+   }
+
    .header-container {
       height: 96px;
       padding: 0 40px;
@@ -405,3 +433,490 @@ header nav ul a:hover {
       font-size: 72px;
    }
 }
+
+/* How it Works Section */
+.workflow {
+   /* teal at 6% */
+   background-color: rgba(0, 65, 86, 0.06);
+}
+
+.workflow-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 64px 20px;
+}
+
+.workflow-info {
+   display: grid;
+   gap: 40px;
+
+   position: relative;
+   z-index: 0;
+}
+
+.workflow hr {
+   display: none;
+   width: 100%;
+   height: 1px;
+   margin: 0;
+   border: none;
+   background-color: var(--teal);
+
+   position: absolute;
+   z-index: -1;
+   top: 24px;
+   opacity: 0.3;
+}
+
+.workflow_header {
+   max-width: 640px;
+   margin-bottom: 40px;
+}
+
+.workflow_header p {
+   margin: 0;
+}
+
+.container-info {
+   max-width: 368px;
+}
+
+.container-info h4 {
+   margin: 24px 0 8px;
+   font-size: 18px;
+}
+
+.container-info p {
+   margin: 0;
+}
+
+.info-number {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 49px;
+   height: 49px;
+   background-color: var(--sand);
+   border-radius: 50%;
+   font-family: var(--font-heading);
+   font-size: 18px;
+   font-weight: 600;
+}
+
+@media (min-width: 768px) {
+   .workflow-container {
+      padding: 96px 20px;
+   }
+
+   .workflow-info {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+   }
+
+   .workflow hr {
+      display: block;
+   }
+}
+
+@media (min-width: 1200px) {
+   .workflow-container {
+      padding: 128px 40px;
+   }
+
+   .workflow_header {
+      margin-bottom: 64px;
+   }
+
+   .workflow-info {
+      gap: 48px;
+   }
+}
+/* How it Works Section */
+
+/* Portfolio Section */
+.portfolio {
+   padding: 64px 0;
+   background: var(--teal);
+   color: var(--white);
+}
+
+.portfolio-container {
+   display: flex;
+   flex-direction: column;
+
+   max-width: 1200px;
+   margin: 0 auto 40px;
+   padding: 0 20px;
+}
+
+.portfolio-header {
+   max-width: 368px;
+}
+
+.portfolio-info {
+   color: var(--white);
+   font-size: 16px;
+   font-family: var(--font-body);
+   font-weight: 400;
+
+   max-width: 368px;
+}
+
+.portfolio-table {
+   display: grid;
+   grid-auto-rows: 251px;
+   gap: 16px;
+
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+.picture-container {
+   position: relative;
+}
+
+.portfolio-picture {
+   height: 100%;
+}
+
+.portfolio-picture img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+/* Caption sits on the photo with a dark fade behind it */
+.nav-text {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding: 40px 20px 16px;
+   background: linear-gradient(transparent, rgba(0, 65, 86, 0.85));
+}
+
+.nav-text h4 {
+   margin: 0;
+   color: var(--white);
+   font-size: 16px;
+}
+
+.nav-text p {
+   margin: 0;
+   color: var(--sand);
+   font-family: var(--font-heading);
+   font-size: 11px;
+   font-weight: 600;
+   letter-spacing: 2px;
+}
+
+@media (min-width: 768px) {
+   .portfolio {
+      padding: 96px 0;
+   }
+
+   .portfolio-table {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 258px;
+   }
+
+   .big {
+      grid-column: span 2;
+   }
+}
+
+@media (min-width: 1200px) {
+   .portfolio {
+      padding: 128px 0;
+   }
+
+   .portfolio-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 64px;
+      padding: 0 40px;
+   }
+
+   .portfolio-table {
+      padding: 0 40px;
+   }
+
+   .portfolio-info {
+      font-size: 18px;
+   }
+
+   .portfolio-table {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 280px;
+   }
+
+   .big {
+      grid-row: span 2;
+   }
+
+   .tall {
+      grid-row: span 2;
+   }
+
+   .wide {
+      grid-column: span 2;
+   }
+}
+/* Portfolio Section */
+
+/* Testimonials Section */
+.testimonials-container {
+   display: flex;
+   flex-direction: column;
+   gap: 32px;
+
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 64px 20px;
+}
+
+.testimonials-list blockquote {
+   margin: 0;
+   padding: 28px 0;
+   border-bottom: 1px solid rgba(0, 65, 86, 0.15);
+}
+
+.testimonials-list blockquote:first-child {
+   padding-top: 0;
+}
+
+.testimonials-list blockquote:last-child {
+   border-bottom: none;
+}
+
+.testimonials-list p {
+   margin: 0;
+   font-family: var(--font-heading);
+   font-size: 20px;
+   font-weight: 300;
+   line-height: 1.5;
+}
+
+.testimonials-list .client {
+   margin-top: 16px;
+   font-family: var(--font-body);
+   font-size: 14px;
+   font-weight: 400;
+}
+
+@media (min-width: 768px) {
+   .testimonials-container {
+      padding: 96px 20px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .testimonials-container {
+      flex-direction: row;
+      gap: 64px;
+      padding: 128px 40px;
+   }
+
+   .testimonials-header {
+      width: 379px;
+   }
+
+   .testimonials-list {
+      flex: 1;
+   }
+
+   .testimonials-list blockquote {
+      padding: 36px 0;
+   }
+
+   .testimonials-list p {
+      font-size: 24px;
+   }
+}
+/* Testimonials Section */
+
+/* Contact Section */
+.contact {
+   /* teal at 6% */
+   background-color: rgba(0, 65, 86, 0.06);
+}
+
+.contact-container {
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 64px 20px;
+}
+
+.contact-title {
+   margin-bottom: 4px;
+   font-family: var(--font-heading);
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: 2px;
+   opacity: 0.7;
+}
+
+.contact-link {
+   display: block;
+   margin: 0 0 24px;
+   color: var(--teal);
+   font-family: var(--font-heading);
+   font-size: 20px;
+   font-weight: 300;
+   text-decoration: none;
+}
+
+.contact-link:hover {
+   text-decoration: underline;
+}
+
+.contact-form {
+   display: flex;
+   flex-direction: column;
+   padding: 24px;
+   background: var(--white);
+   border-radius: 16px;
+}
+
+.contact-form label {
+   margin-bottom: 4px;
+   font-family: var(--font-heading);
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: 2px;
+}
+
+.contact-form input,
+.contact-form textarea {
+   margin-bottom: 28px;
+   padding: 8px 0;
+   border: none;
+   border-bottom: 1px solid var(--teal);
+   color: var(--teal);
+   font-family: var(--font-body);
+   font-size: 16px;
+}
+
+.contact-form textarea {
+   height: 120px;
+   resize: vertical;
+}
+
+.contact-form button {
+   align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+   .contact-container {
+      padding: 96px 20px;
+   }
+
+   .contact-form {
+      padding: 32px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .contact-container {
+      flex-direction: row;
+      gap: 64px;
+      padding: 128px 40px;
+   }
+
+   .contact-info,
+   .contact-form {
+      flex: 1;
+   }
+
+   .contact-link {
+      font-size: 24px;
+   }
+
+   .contact-form {
+      padding: 48px;
+   }
+}
+/* Contact Section */
+
+/* Footer */
+footer {
+   background: var(--teal);
+   color: var(--white);
+}
+
+.footer-container {
+   display: flex;
+   flex-direction: column;
+   gap: 32px;
+
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 56px 20px 32px;
+}
+
+.footer-about img {
+   width: 120px;
+}
+
+.footer-about p {
+   max-width: 400px;
+   opacity: 0.8;
+}
+
+footer h4 {
+   margin: 0 0 16px;
+   color: var(--sand);
+   font-size: 12px;
+   letter-spacing: 2px;
+}
+
+.footer-links a {
+   display: block;
+   margin-bottom: 8px;
+   color: var(--white);
+   text-decoration: none;
+}
+
+.footer-links a:hover {
+   color: var(--sand);
+}
+
+.footer-visit p {
+   margin: 0 0 8px;
+}
+
+.copyright {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 16px 20px 24px;
+   border-top: 1px solid rgba(255, 255, 255, 0.15);
+   font-size: 13px;
+}
+
+@media (min-width: 1200px) {
+   .footer-container {
+      flex-direction: row;
+      gap: 64px;
+      padding: 72px 40px 32px;
+   }
+
+   .footer-about {
+      flex: 2;
+   }
+
+   .footer-links,
+   .footer-visit {
+      flex: 1;
+   }
+
+   .copyright {
+      padding: 16px 40px 24px;
+   }
+}
+/* Footer */
