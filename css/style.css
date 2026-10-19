@@ -83,7 +83,7 @@ h2 {
    line-height: 1.2;
 }
 
-h4 {
+h3 {
    font-family: var(--font-heading);
    font-weight: 600;
 }
@@ -481,7 +481,7 @@ header nav ul a:hover {
    max-width: 368px;
 }
 
-.container-info h4 {
+.container-info h3 {
    margin: 24px 0 8px;
    font-size: 18px;
 }
@@ -596,7 +596,7 @@ header nav ul a:hover {
    background: linear-gradient(transparent, rgba(0, 65, 86, 0.85));
 }
 
-.nav-text h4 {
+.nav-text h3 {
    margin: 0;
    color: var(--white);
    font-size: 16px;
@@ -869,7 +869,7 @@ footer {
    opacity: 0.8;
 }
 
-footer h4 {
+footer h3 {
    margin: 0 0 16px;
    color: var(--sand);
    font-size: 12px;
